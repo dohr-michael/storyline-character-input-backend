@@ -14,5 +14,14 @@ module.exports = exports = function(app) {
 
 	// begin resources
 
+// -- character --
+var character = require('../resources/character.js');
+
+app.post('/characters', character.create);		// Create
+app.get('/characters/:id', character.get);		// Read
+app.put('/characters/:id', character.update);		// Update
+app.del('/characters/:id', character.delete);		// Delete
+app.get('/characters', character.list);			// List
+
 	// end resources
 }
